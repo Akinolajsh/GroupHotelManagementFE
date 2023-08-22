@@ -4,9 +4,11 @@ import { mainRoute } from './router/mainRoute'
 
 const App = () => {
   return (
+
     <div>
       <RouterProvider router={mainRoute}/>
     </div>
+
   )
 }
 
