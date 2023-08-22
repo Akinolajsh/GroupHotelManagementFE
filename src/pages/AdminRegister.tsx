@@ -1,8 +1,8 @@
-
-
 const AdminRegister = () => {
   return (
-    <div>AdminRegister</div>
+    <div className="w-full h-[100vh] flex justify-center items-center bg-slate-300">
+        
+    </div>
   )
 }
 
