@@ -8,7 +8,7 @@ export const registerAdmin = async(data: any)=>{
       const config = {
         "content-type": "multipart/formdata"
       }
-        return await axios.post(`${url}/register`, config, data).then((res:any)=>{
+        return await axios.post(`${url}/admin-sign-up`, config, data).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -18,7 +18,7 @@ export const registerAdmin = async(data: any)=>{
 
 export const signInAdmin = async(data: any)=>{
     try {
-        return await axios.post(`${url}/sign-in`, data).then((res:any)=>{
+        return await axios.post(`${url}/admin-sign-in`, data).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -28,7 +28,7 @@ export const signInAdmin = async(data: any)=>{
 
 export const ViewAdmins = async()=>{
     try {
-        return axios.get(`${url}/view`).then((res:any)=>{
+        return axios.get(`${url}/view-admins`).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -38,7 +38,7 @@ export const ViewAdmins = async()=>{
 
 export const viewOneAdmin = (adminID: any)=>{
     try {
-      return axios.get(`${url}/${adminID}/view-one`).then((res:any)=>{
+      return axios.get(`${url}/${adminID}/view-one-admin`).then((res:any)=>{
         return res.data.data
       })  
     } catch (error) {

@@ -9,7 +9,7 @@ export const registerUser = async(data: any)=>{
       const config = {
         "content-type": "multipart/formdata"
       }
-        return await axios.post(`${url}/register`, config,data).then((res:any)=>{
+        return await axios.post(`${url}/register-user`, config,data).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -29,7 +29,7 @@ export const signInUser = async(data: any)=>{
 
 export const ViewUsers = async()=>{
     try {
-        return axios.get(`${url}/view`).then((res:any)=>{
+        return axios.get(`${url}/view-all`).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
