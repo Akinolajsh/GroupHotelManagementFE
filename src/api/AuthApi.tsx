@@ -1,7 +1,7 @@
 import axios from "axios"
 
 
-const url:string = "https://grouphotelbe.onrender.com"
+const url:string = "https://grouphotelbe.onrender.com/api/v1"
 
 
 
