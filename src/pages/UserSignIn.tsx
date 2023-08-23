@@ -1,11 +1,19 @@
-import img from "../assets/dummy-prod-1.jpg"
 import img2 from "../assets/pexels-anh-nguyen-16946947.jpg"
 import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
 import {Link} from "react-router-dom"
+import *  as yup from "yup"
 
 
 
 const UserSignIn = () => {
+
+  const model = yup.object({
+    email:yup.string().required(),
+    paassword:yup.string().required()
+  })
+
+  
+
   return (
     <div className="
     w-full
@@ -28,9 +36,17 @@ const UserSignIn = () => {
        h-full
        rounded-l-[20px]
        flex
+       flex-col
        justify-center
        items-center
        ">
+        <div className="
+          w-full
+          h-[30px]
+          ml-[110px]
+          mt-[30px]
+          font-[500]
+          ">LanDBnB</div>
         <div className="
         w-[80%]
         h-[95%]
@@ -40,85 +56,15 @@ const UserSignIn = () => {
         items-center
         ">
           <div className="
-          w-full
-          h-[30px]
+          text-[30px]
           font-[500]
-          ">LanDBnB</div>
-          <div className="
-          text-[20px]
-          font-[500]
+          mb-[10px]
           ">Welcome Back</div>
           <div className="
-          text-[13px]
+          text-[15px]
           font-[500]
           mb-[5px]
           ">Let's get you started on with a 30% discount</div>
-          <div className="
-          flex
-          flex-col
-          items-center
-          justify-center
-
-          ">
-            <img className="
-            w-[100px]
-            h-[100px]
-            rounded-[50%]
-            border-[1px]
-            border-[#024637]
-            object-cover
-            "
-            src={img}
-            />
-            <label className="
-            py-[6px]
-            px-[15px]
-            bg-[#024637]
-            rounded-[5px]
-            text-white
-            text-[12px]
-            mt-[10px]
-            mb-[10px]
-            hover:scale-[1.02]
-            hover:cursor-pointer
-            hover:transition-all
-            duration-300
-            "
-            htmlFor="image"
-            >Upload Image</label>
-            <input className="
-            hidden
-            "
-            id="image"
-            accept="image/png, image/jpg, image/jpeg"
-            type="file"
-            />
-          </div>
-          <div className="
-          flex
-          flex-col
-          mt-[10px]
-          mb-[10px]
-          ">
-          
-            <input className="
-            w-[320px]
-            h-[35px]
-            bg-[#F5F5F5]
-            rounded-[7px]
-            outline-[1px]
-            outline-[#024637]
-            pl-[10px] 
-            placeholder:text-[14px]
-            "
-            placeholder="Eg.Williams Daniel"
-            />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
-          </div>
           <div className="
           flex
           flex-col
@@ -158,29 +104,6 @@ const UserSignIn = () => {
             pl-[10px] 
             placeholder:text-[14px]
             "
-            placeholder="Eg. +234 9091465699"
-            />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
-          </div>
-          <div className="
-          flex
-          flex-col
-          mt-[10px]
-          mb-[10px]
-          ">
-            
-            <input className="
-            w-[320px]
-            h-[35px]
-            bg-[#F5F5F5]
-            rounded-[7px]
-            pl-[10px] 
-            placeholder:text-[14px]
-            "
             placeholder="Eg. myPassword$$%%"
             />
             <label className="
@@ -189,28 +112,7 @@ const UserSignIn = () => {
             hidden
             ">please fill this field</label>
           </div>
-          <div className="
-          flex
-          flex-col
-          mt-[10px]
-          mb-[10px]
-          ">
-            <input className="
-            w-[320px]
-            h-[35px]
-            bg-[#F5F5F5]
-            rounded-[7px]
-            pl-[10px] 
-            placeholder:text-[14px]
-            "
-            placeholder="Eg. myPassword$$%%"
-            />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
-          </div>
+          
           <button className="
           w-[280px]
           h-[35px]
@@ -223,7 +125,7 @@ const UserSignIn = () => {
           hover:cursor-pointer
           hover:transition-all
           duration-300
-          ">Register</button>
+          ">Login</button>
           <hr className="
           w-[290px]
           border-[1px]
@@ -239,13 +141,13 @@ const UserSignIn = () => {
             text-[#465a56]
             font-[500]
             ">Have an account?</div>
-            <Link to="user-signin">
+            <Link to="/user-register">
             <div className="
             ml-[5px]
             text-[13px]
             font-[500]
             text-[#024637]
-            ">Sign-in.</div></Link>
+            ">Register.</div></Link>
           </div>
         </div>
        </div>
@@ -310,7 +212,8 @@ const UserSignIn = () => {
             w-[100%]
           h-[100%]
             "/>
-            <div className="
+           <Link to="/user-register">
+           <div className="
             w-[100px]
             h-[100px]
             bg-transparent
@@ -327,6 +230,7 @@ const UserSignIn = () => {
             text-[white]
             text-[30px]
             "/></div>
+           </Link>
               <div className="
               w-[190px]
               h-[90px]
@@ -339,6 +243,7 @@ const UserSignIn = () => {
               justify-center
               items-center
               ">
+                <Link to="/user-register">
                 <div className="
                 w-[170px]
                 h-[70px]
@@ -352,6 +257,7 @@ const UserSignIn = () => {
                 text-[white]
                 text-[30px]
                 "/></div>
+                </Link>
               </div>
           </div>
         </div>

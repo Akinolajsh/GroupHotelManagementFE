@@ -1,8 +1,57 @@
+import { useForm } from "react-hook-form"
 import img from "../assets/dummy-prod-1.jpg"
 import img2 from "../assets/pexels-anh-nguyen-16946947.jpg"
 import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { useState } from "react"
+import { registerUser } from "../api/AuthApi"
+
+
 const UserRegister = () => {
+  const navigate = useNavigate()
+
+  const [avatar, setAvatar] = useState<string>(img)
+  const [image, setImage] = useState<string>("")
+
+
+  const onHandleImage = (el:any)=>{
+    const localImage = el.target.files[0]
+    const saveImage = URL.createObjectURL(localImage)
+
+    setAvatar(saveImage)
+    setImage(localImage)
+  }
+
+  const model = yup.object({
+    fullName:yup.string().required(),
+    email:yup.string().required(),
+    phoneNumber:yup.number().required(),
+    password:yup.string().required(),
+    confirm:yup.string().oneOf([yup.ref("password")])
+  })
+
+  const {register, handleSubmit, formState:{errors}} = useForm({
+    resolver: yupResolver(model)
+  })
+
+  const onSubmit = handleSubmit(async(data:any)=>{
+    const {fullName, email, password, phoneNumber} = data
+
+    const formData = new FormData()
+
+    formData.append("fullName",fullName)
+    formData.append("email",email)
+    formData.append("password",password)
+    formData.append("phoneNumber",phoneNumber)
+    formData.append("avatar",image)
+
+    registerUser(formData).then(()=>{
+      navigate("/user-sign")
+    })
+  })
+
   return (
     <div className="
     w-full
@@ -20,14 +69,16 @@ const UserRegister = () => {
       rounded-[20px]
       ">
         {/* left */}
-       <div className="
+       <form className="
        w-[50%]
        h-full
        rounded-l-[20px]
        flex
        justify-center
        items-center
-       ">
+       "
+       onSubmit={onSubmit}
+       >
         <div className="
         w-[80%]
         h-[95%]
@@ -65,7 +116,7 @@ const UserRegister = () => {
             border-[#024637]
             object-cover
             "
-            src={img}
+            src={avatar}
             />
             <label className="
             py-[6px]
@@ -89,6 +140,7 @@ const UserRegister = () => {
             id="image"
             accept="image/png, image/jpg, image/jpeg"
             type="file"
+            onChange={onHandleImage}
             />
           </div>
           <div className="
@@ -109,12 +161,14 @@ const UserRegister = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg.Williams Daniel"
+            { ...register("fullName") }
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.fullName?.message && <label className="
+              text-[10px]
+              text-[red]
+              ">please fill this field</label>
+            }
           </div>
           <div className="
           flex
@@ -132,13 +186,15 @@ const UserRegister = () => {
             pl-[10px] 
             placeholder:text-[14px]
             "
+            { ...register("email") }
             placeholder="Eg. test@gmail.com"
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.email?.message && <label className="
+              text-[10px]
+              text-[red]
+              ">please fill this field</label>
+            }
           </div>
           <div className="
           flex
@@ -156,12 +212,14 @@ const UserRegister = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg. +234 9091465699"
+            { ...register("phoneNumber") }
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.phoneNumber?.message && <label className="
+              text-[10px]
+              text-[red]
+              ">please fill this field</label>
+            }
           </div>
           <div className="
           flex
@@ -179,12 +237,14 @@ const UserRegister = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg. myPassword$$%%"
+            { ...register("password") }
             />
-            <label className="
+           {
+            errors.password?.message &&  <label className="
             text-[10px]
             text-[red]
-            hidden
             ">please fill this field</label>
+           }
           </div>
           <div className="
           flex
@@ -201,12 +261,14 @@ const UserRegister = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg. myPassword$$%%"
+            { ...register("confirm") }
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.confirm?.message && <label className="
+              text-[10px]
+              text-[red]
+              ">please fill this field</label>
+            }
           </div>
           <button className="
           w-[280px]
@@ -220,7 +282,9 @@ const UserRegister = () => {
           hover:cursor-pointer
           hover:transition-all
           duration-300
-          ">Register</button>
+          "
+          type="submit"
+          >Register</button>
           <hr className="
           w-[290px]
           border-[1px]
@@ -236,7 +300,7 @@ const UserRegister = () => {
             text-[#465a56]
             font-[500]
             ">Have an account?</div>
-            <Link to="user-signin">
+            <Link to="/user-sign">
             <div className="
             ml-[5px]
             text-[13px]
@@ -245,7 +309,7 @@ const UserRegister = () => {
             ">Sign-in.</div></Link>
           </div>
         </div>
-       </div>
+       </form>
         {/* left  ends */}
 
         {/* Right */}
@@ -307,6 +371,7 @@ const UserRegister = () => {
             w-[100%]
           h-[100%]
             "/>
+            <Link to="/user-register">
             <div className="
             w-[100px]
             h-[100px]
@@ -324,6 +389,7 @@ const UserRegister = () => {
             text-[white]
             text-[30px]
             "/></div>
+            </Link>
               <div className="
               w-[190px]
               h-[90px]
@@ -336,6 +402,7 @@ const UserRegister = () => {
               justify-center
               items-center
               ">
+                <Link to="/user-sign">
                 <div className="
                 w-[170px]
                 h-[70px]
@@ -349,6 +416,7 @@ const UserRegister = () => {
                 text-[white]
                 text-[30px]
                 "/></div>
+                </Link>
               </div>
           </div>
         </div>
