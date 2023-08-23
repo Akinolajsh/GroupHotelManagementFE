@@ -5,6 +5,7 @@ import UserSignIn from '../pages/UserSignIn'
 import HomeScreen from '../pages/Screen/HomeScreen'
 import Description from '../pages/Description'
 import CreateRoom from '../pages/Admin/CreateRoom'
+import ViewRooms from '../pages/ViewRooms'
 
 
 export const mainRoute= createBrowserRouter([
@@ -34,7 +35,7 @@ export const mainRoute= createBrowserRouter([
         element: <CreateRoom/>
     },
     {
-        path: "/view",
-        element: <CreateRoom/>
+        path: "/view-rooms",
+        element: <ViewRooms/>
     },
 ])
