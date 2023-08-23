@@ -19,4 +19,4 @@ const GlobalState = createSlice({
 
 export const {createUser,logOutUser} = GlobalState.actions
 
-export default GlobalState.reducer
+export default GlobalState.reducer;
