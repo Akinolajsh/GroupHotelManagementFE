@@ -32,6 +32,10 @@ export const mainRoute= createBrowserRouter([
         element:<UserRegister/>
     },
     {
+        path: "/user-sign",
+        element:<UserSignIn/>
+    },
+    {
         path: "/description",
         element:<Description/>,
     },
