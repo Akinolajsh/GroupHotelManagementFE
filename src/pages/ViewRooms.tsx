@@ -1,6 +1,6 @@
 const ViewRooms = () => {
   return (
-    <div>ViewRooms</div>
+    <div>ViewRoom</div>
   )
 }
 
