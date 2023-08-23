@@ -73,7 +73,7 @@ const Footer = () => {
         {/* second */}
 
         {/* third */}
-        <div className=" h-full w-[300px]"></div>
+        <div className=" h-full w-[300px] bg-[red]"></div>
         {/* third */}
       </div>
       {/* MAIN */}
