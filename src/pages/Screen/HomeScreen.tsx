@@ -3,6 +3,7 @@ import HeroPage from './HeroPage'
 import Redefines from './Redefines'
 import Chef from './Chef'
 import Experience from './Experience'
+import Bedroom from './Bedroom'
 
 const HomeScreen = () => {
   return (
@@ -11,6 +12,7 @@ const HomeScreen = () => {
         <Redefines/>
         <Chef/>
         <Experience/>
+        <Bedroom/>
     </div>
   )
 }
