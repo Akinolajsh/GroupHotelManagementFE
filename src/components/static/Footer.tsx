@@ -1,4 +1,4 @@
-import logoPix from "../../assets/react.svg";
+import logoPix from "../../assets/images-removebg-preview.png";
 import swimPix from "../../assets/snocker.webp";
 import tennisPix from "../../assets/swim.jpg";
 import snookerPix from "../../assets/tennis.webp";
@@ -10,7 +10,7 @@ const Footer = () => {
         {/* first */}
         <div className="flex flex-col justify-between   w-[400px] h-[180px] ">
           <div className="uppercase flex justify-start items-center text-white text-[20px] mb-5">
-            <img src={logoPix} className="mr-2" /> moon safari
+            <img src={logoPix} className="mr-2 h-[80px]" /> moon safari
           </div>
           <div className="text-[12px] text-slate-100">
             <div className="mb-6">
