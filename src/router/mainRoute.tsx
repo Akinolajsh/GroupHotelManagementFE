@@ -33,6 +33,6 @@ export const mainRoute= createBrowserRouter([
     },
     {
         path: "/description",
-        element:<Description/>
+        element:<Description/>,
     },
 ])
