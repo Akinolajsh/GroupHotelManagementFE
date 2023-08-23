@@ -32,5 +32,9 @@ export const mainRoute= createBrowserRouter([
     },{
         path: "/admin-create",
         element: <CreateRoom/>
-    }
+    },
+    {
+        path: "/view",
+        element: <CreateRoom/>
+    },
 ])

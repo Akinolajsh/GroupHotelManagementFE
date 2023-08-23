@@ -73,7 +73,22 @@ const Footer = () => {
         {/* second */}
 
         {/* third */}
-        <div className=" h-full w-[300px] bg-[red]"></div>
+        <div className=" h-full w-[300px]">
+        <div className="text-white mb-2 uppercase text-[13px] hover:text-[#a8eba8] hover:cursor-pointer ">
+        useful Links
+            </div>
+
+            <div className="capitalize  text-[12px] text-white font-bold hover:text-[#a8eba8] hover:cursor-pointer duration-300 transition-all flex" >
+ About       
+Dining
+Wellness & Spa
+Blog
+Info & Directions
+            </div>
+            <div>
+
+            </div>
+        </div>
         {/* third */}
       </div>
       {/* MAIN */}
