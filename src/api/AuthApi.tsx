@@ -1,7 +1,8 @@
 import axios from "axios"
 
 
-const url:string = "http://localhost3000/api/v1"
+const url:string = "https://grouphotelbe.onrender.com"
+
 
 
 export const registerUser = async(data: any)=>{
@@ -9,7 +10,7 @@ export const registerUser = async(data: any)=>{
       const config = {
         "content-type": "multipart/formdata"
       }
-        return await axios.post(`${url}/register-user`, config,data).then((res:any)=>{
+        return await axios.post(`${url}/createUser`, config,data).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -19,7 +20,7 @@ export const registerUser = async(data: any)=>{
 
 export const signInUser = async(data: any)=>{
     try {
-        return await axios.post(`${url}/sign-in`, data).then((res:any)=>{
+        return await axios.post(`${url}/signInUser`, data).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -29,7 +30,7 @@ export const signInUser = async(data: any)=>{
 
 export const ViewUsers = async()=>{
     try {
-        return axios.get(`${url}/view-all`).then((res:any)=>{
+        return axios.get(`${url}/readAll`).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
@@ -37,9 +38,9 @@ export const ViewUsers = async()=>{
     }
 }
 
-export const viewOneUser = (userID: any)=>{
+export const viewOneUser = (id: any)=>{
     try {
-      return axios.get(`${url}/${userID}/view-one`).then((res:any)=>{
+      return axios.get(`${url}/${id}/readOneUser`).then((res:any)=>{
         return res.data.data
       })  
     } catch (error) {
