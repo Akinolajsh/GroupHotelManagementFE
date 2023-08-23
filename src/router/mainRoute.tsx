@@ -3,12 +3,21 @@ import Layout from '../components/common/Layout'
 import AdminRegister from '../pages/AdminRegister'
 import UserRegister from '../pages/UserRegister'
 import UserSignIn from '../pages/UserSignIn'
+import HomeScreen from '../pages/Screen/HomeScreen'
+import AdminSign from '../pages/AdminSign'
+import Description from '../pages/Description'
 
 
 export const mainRoute= createBrowserRouter([
     {
         path: "/",
         element:<Layout/>,
+        children:[
+            {
+                index: true,
+                element: <HomeScreen/>
+            }
+        ]
 
     },{
         path: "/admin-register",
@@ -16,14 +25,14 @@ export const mainRoute= createBrowserRouter([
     },
     {
         path: "/admin-signin",
-        element:<AdminRegister/>
+        element:<AdminSign/>
     },
     {
         path: "/user-register",
         element:<UserRegister/>
     },
     {
-        path: "/user-signin",
-        element:<UserSignIn/>
+        path: "/description",
+        element:<Description/>
     },
 ])
