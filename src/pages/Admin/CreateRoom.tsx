@@ -3,8 +3,13 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { createRoom } from "../../api/AdminRoomAPI";
+import { useNavigate } from "react-router-dom";
 
 const CreateRoom = () => {
+
+  const navigate= useNavigate()
+
   const model = yup.object({
     roomSize: yup.string().required(),
     bedSize: yup.string().required(),
@@ -33,7 +38,9 @@ const CreateRoom = () => {
     formData.append("roomType", roomType);
     formData.append("description", description);
     formData.append("amount", amount);
-    formData.append("roomPics ", image);
+    formData.append("image ", image);
+
+   
   });
 
   const [image, setImage] = useState<string>("");
@@ -120,6 +127,7 @@ const CreateRoom = () => {
               <input
                 placeholder="2 kings"
                 className="w-full outline-none border-0 h-full rounded-[5px] px-2 font-light text-[15px]"
+                {...register("bedSize")}
               />
             </div>
           {errors?.bedSize?.message &&   <div className="text-[10px] text-[#024637]  absolute top-12 right-7 mb-1">
