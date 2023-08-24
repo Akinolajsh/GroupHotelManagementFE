@@ -1,6 +1,6 @@
 
-import roomPix from "../../assets/b.jpg"
-import roomPix1 from "../../assets/bedroom.jpg"
+import roomPix from "../../../assets/b.jpg"
+import roomPix1 from "../../../assets/bedroom.jpg"
 import { Link } from 'react-router-dom'
 
 const Bedroom = () => {

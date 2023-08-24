@@ -1,7 +1,7 @@
 import React from "react";
-import logoPix from "../../assets/react.svg";
-import redefinPix from "../../assets/redefine5.avif"
-import redefinePix from "../../assets/redefine6.avif"
+import logoPix from "../../../assets/react.svg";
+import redefinPix from "../../../assets/redefine5.avif"
+import redefinePix from "../../../assets/redefine6.avif"
 const Redefines = () => {
   return (
     <div className="h-[100vh] w-full flex justify-center items-center flex-col">

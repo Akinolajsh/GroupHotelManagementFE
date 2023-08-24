@@ -1,6 +1,6 @@
-import heroPix from "../../assets/hero.avif";
-import logo from "../../assets/images-removebg-preview.png";
-import ButtonProps from "../../components/static/ButtonProps";
+import heroPix from "../../../assets/hero.avif";
+import logo from "../../../assets/images-removebg-preview.png";
+import ButtonProps from "../../../components/static/ButtonProps";
 const HeroPage = () => {
   return (
     <div

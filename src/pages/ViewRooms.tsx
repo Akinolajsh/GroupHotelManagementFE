@@ -20,8 +20,8 @@ const ViewRooms = () => {
 <img src={pix} alt=""className="w-full h-[55%] justify-center items-center" />
 
 <text className="text-[15px] w-full h-[12%] text-[#fff] items-center flex">PRESIDENTIAL BEACHFRONT VILLA</text>
-<div className="w-full h-[10%] text-[#fff] text-[10px]">
-$210.00  
+<div className="w-full h-[10%] text-[#fff] text-[15px] flex">
+$210.00 <span>per nigth</span>
 </div>
 
 </div>
