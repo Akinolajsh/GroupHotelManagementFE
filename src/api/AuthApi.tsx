@@ -1,16 +1,17 @@
 import axios from "axios"
 
 
-const url:string = "https://grouphotelbe.onrender.com"
+const url:string = "https://grouphotelbe.onrender.com/api/v1"
 
 
 
 export const registerUser = async(data: any)=>{
     try {
-      const config = {
+      const config:any = {
         "content-type": "multipart/formdata"
       }
-        return await axios.post(`${url}/createUser`, config,data).then((res:any)=>{
+        return await axios.post(`${url}/createUser`,data, config).then((res:any)=>{
+            console.log("api",data)
             return res.data.data
         })
     } catch (error) {

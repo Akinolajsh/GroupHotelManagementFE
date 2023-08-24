@@ -1,4 +1,4 @@
-import logoPix from "../../assets/react.svg";
+import logoPix from "../../assets/images-removebg-preview.png";
 import swimPix from "../../assets/snocker.webp";
 import tennisPix from "../../assets/swim.jpg";
 import snookerPix from "../../assets/tennis.webp";
@@ -10,7 +10,7 @@ const Footer = () => {
         {/* first */}
         <div className="flex flex-col justify-between   w-[400px] h-[180px] ">
           <div className="uppercase flex justify-start items-center text-white text-[20px] mb-5">
-            <img src={logoPix} className="mr-2" /> moon safari
+            <img src={logoPix} className="mr-2 h-[80px]" /> moon safari
           </div>
           <div className="text-[12px] text-slate-100">
             <div className="mb-6">
@@ -73,7 +73,22 @@ const Footer = () => {
         {/* second */}
 
         {/* third */}
-        <div className=" h-full w-[300px] bg-[red]"></div>
+        <div className=" h-full w-[300px]">
+        <div className="text-white mb-2 uppercase text-[13px] hover:text-[#a8eba8] hover:cursor-pointer ">
+        useful Links
+            </div>
+
+            <div className="capitalize  text-[12px] text-white font-bold hover:text-[#a8eba8] hover:cursor-pointer duration-300 transition-all flex" >
+ About       
+Dining
+Wellness & Spa
+Blog
+Info & Directions
+            </div>
+            <div>
+
+            </div>
+        </div>
         {/* third */}
       </div>
       {/* MAIN */}

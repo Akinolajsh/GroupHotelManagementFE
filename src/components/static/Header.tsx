@@ -1,5 +1,5 @@
 import ButtonProps from "./ButtonProps";
-import logoPix from "../../assets/react.svg";
+import logoPix from "../../assets/images-removebg-preview.png";
 
 const Header = () => {
   return (
@@ -7,7 +7,7 @@ const Header = () => {
       <div className="h-[70px] w-[90%] flex justify-between items-center ">
         {/* LOGO */}
         <div className="font-bold text-[16px] flex justify-center items-center">
-          <img src={logoPix} className="mr-2" /> MOON SAFARI
+          <img src={logoPix} className="h-[67px]" /> MOON SAFARI
         </div>
         {/* LOGO */}
 
