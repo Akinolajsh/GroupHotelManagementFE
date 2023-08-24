@@ -25,7 +25,7 @@ const Chef = () => {
   ];
 
   return (
-    <div className="h-[670px] w-full flex justify-center items-center bg-[#edeff2]">
+    <div className="min-h-[500px] w-full flex justify-center items-center bg-[#edeff2]">
       {/* MAIN */}
 
       <div className="h-full w-[90%] flex justify-center items-center mt-9 meduim:hidden">
