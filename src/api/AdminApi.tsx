@@ -5,10 +5,10 @@ const url:string = "https://grouphotelbe.onrender.com/api/v1"
 
 export const registerAdmin = async(data: any)=>{
     try {
-      const config = {
+      const config:any = {
         "content-type": "multipart/formdata"
       }
-        return await axios.post(`${url}/createAdmin`, config, data).then((res:any)=>{
+        return await axios.post(`${url}/createAdmin`, data, config).then((res:any)=>{
             return res.data.data
         })
     } catch (error) {
