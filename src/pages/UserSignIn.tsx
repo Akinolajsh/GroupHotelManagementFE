@@ -1,17 +1,33 @@
-import img2 from "../assets/pexels-anh-nguyen-16946947.jpg"
+import { useForm } from "react-hook-form"
+import img2 from "../../../assets/pexels-anh-nguyen-16946947.jpg"
 import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
-import {Link} from "react-router-dom"
+import { yupResolver } from "@hookform/resolvers/yup"
+import {Link, useNavigate} from "react-router-dom"
 import *  as yup from "yup"
+import { signInUser } from "../api/AuthApi"
 
 
 
 const UserSignIn = () => {
+
+  const navigate = useNavigate()
 
   const model = yup.object({
     email:yup.string().required(),
     paassword:yup.string().required()
   })
 
+  const { register,handleSubmit,formState:{errors}} = useForm({
+    resolver: yupResolver(model)
+  })
+
+  const onSubmit = handleSubmit((data:any)=>{
+    const {email,password} = data
+
+    signInUser({email,password}).then(()=>{
+      navigate("/")
+    })
+  })
 
 
   return (
@@ -31,7 +47,7 @@ const UserSignIn = () => {
       rounded-[20px]
       ">
         {/* left */}
-       <div className="
+       <form className="
        w-[50%]
        h-full
        rounded-l-[20px]
@@ -39,7 +55,9 @@ const UserSignIn = () => {
        flex-col
        justify-center
        items-center
-       ">
+       "
+       onSubmit={onSubmit}
+       >
         <div className="
           w-full
           h-[30px]
@@ -82,12 +100,15 @@ const UserSignIn = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg. test@gmail.com"
+            {...register("email")}
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.email?.message && <label className="
+              text-[10px]
+              text-[red]
+              hidden
+              ">please fill this field</label>
+            }
           </div>
           <div className="
           flex
@@ -105,12 +126,15 @@ const UserSignIn = () => {
             placeholder:text-[14px]
             "
             placeholder="Eg. myPassword$$%%"
+            {...register("paassword")}
             />
-            <label className="
-            text-[10px]
-            text-[red]
-            hidden
-            ">please fill this field</label>
+            {
+              errors.paassword?.message &&          <label className="
+              text-[10px]
+              text-[red]
+              hidden
+              ">please fill this field</label>
+            }
           </div>
           
           <button className="
@@ -150,7 +174,7 @@ const UserSignIn = () => {
             ">Register.</div></Link>
           </div>
         </div>
-       </div>
+       </form>
         {/* left  ends */}
 
         {/* Right */}

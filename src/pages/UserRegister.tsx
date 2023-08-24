@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
-import img from "../assets/dummy-prod-1.jpg"
-import img2 from "../assets/pexels-anh-nguyen-16946947.jpg"
+import img from "../../../assets/dummy-prod-1.jpg"
+import img2 from "../../../assets/pexels-anh-nguyen-16946947.jpg"
 import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
 import {Link, useNavigate} from "react-router-dom"
 import * as yup from "yup"
@@ -38,17 +38,16 @@ const UserRegister = () => {
 
   const onSubmit = handleSubmit(async(data:any)=>{
     const {fullName, email, password, phoneNumber} = data
-
     const formData = new FormData()
-
+    
     formData.append("fullName",fullName)
     formData.append("email",email)
     formData.append("password",password)
     formData.append("phoneNumber",phoneNumber)
-    formData.append("avatar",image)
-
+    formData.append("image",image)
+    
     registerUser(formData).then(()=>{
-      navigate("/user-sign")
+      navigate("/user-sign-in")
     })
   })
 
@@ -300,7 +299,7 @@ const UserRegister = () => {
             text-[#465a56]
             font-[500]
             ">Have an account?</div>
-            <Link to="/user-sign">
+            <Link to="/user-sign-in">
             <div className="
             ml-[5px]
             text-[13px]
@@ -402,7 +401,7 @@ const UserRegister = () => {
               justify-center
               items-center
               ">
-                <Link to="/user-sign">
+                <Link to="/user-sign-in">
                 <div className="
                 w-[170px]
                 h-[70px]
