@@ -15,12 +15,12 @@ const ViewRooms = () => {
             </div>
         </div>
         <div className="w-[100%] h-[100vh] flex justify-center items-center ">
-            <div className="bg-[red] w-[95%] h-[70vh] justify-between flex flex-wrap">
+            <div className="w-[95%] h-[70vh] justify-between flex flex-wrap">
 <div className="bg-[#000] justify-center w-[390px] h-[70%] rounded-[10px]">
 <img src={pix} alt=""className="w-full h-[55%] justify-center items-center" />
 
-<text className="text-[15px] w-full h-[15%] text-[#fff] items-center hover:{}flex">PRESIDENTIAL BEACHFRONT VILLA</text>
-<div className="w-full h-[10%] bg-[red]">
+<text className="text-[15px] w-full h-[12%] text-[#fff] items-center flex">PRESIDENTIAL BEACHFRONT VILLA</text>
+<div className="w-full h-[10%] text-[#fff] text-[10px]">
 $210.00  
 </div>
 
