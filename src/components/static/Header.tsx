@@ -1,5 +1,6 @@
 import ButtonProps from "./ButtonProps";
 import logoPix from "../../assets/images-removebg-preview.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -21,7 +22,7 @@ const Header = () => {
         {/* NAV */}
 
         {/* BUTTON */}
-        <div className="medium-hidden">
+        <Link to="/user-sign-in" className="medium-hidden">
           <ButtonProps
             h="h-[40px]"
             w="w-[120px]"
@@ -29,7 +30,7 @@ const Header = () => {
             bg="bg-green-400"
             
           />
-        </div>
+        </Link>
         {/* BUTTON */}
       </div>
     </div>
