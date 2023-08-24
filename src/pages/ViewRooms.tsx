@@ -1,5 +1,6 @@
 import {BsChevronDoubleRight} from "react-icons/bs"
-import room from "../assets/hero1.avif"
+// import room from "../assets/hero1.avif"
+import pix from "../assets/hero1.avif"
 const ViewRooms = () => {
   return (
     <div className="w-full h-[100vh] flex flex-col justify-between">
@@ -13,22 +14,19 @@ const ViewRooms = () => {
                <span>Rooms</span> 
             </div>
         </div>
+        <div className="w-[100%] h-[100vh] flex justify-center items-center ">
+            <div className="bg-[red] w-[95%] h-[70vh] justify-between flex flex-wrap">
+<div className="bg-[#000] justify-center w-[390px] h-[70%] rounded-[10px]">
+<img src={pix} alt=""className="w-full h-[55%] justify-center items-center" />
 
-<div className="flex justify-center flex-col items-center  w-[90%] mt-[30px]">
-
-<div className="justify-between  flex flex-col w-[350px] h-[350px]">
-<img src={room} alt="" className="justify-between  flex flex-col w-[350px] h-[200px]"/>
-<span className="text-[12px] font-light  ">PRESIDENTIAL BEACHFRONT VILLA</span>
-<div className="" >
-    <span className="text-[#024637] text-[15px] font-semibold">$210.00</span>
-    <span className="text-[13px] font-light">per night</span>
-</div>
-<div className="text-[12px] bg-[#024637] flex justify-center items-center rounded text-[white] w-[200px] h-[20px] ">
-<button>Veiw Room Details</button>
+<text className="text-[15px] w-full h-[15%] text-[#fff] items-center hover:{}flex">PRESIDENTIAL BEACHFRONT VILLA</text>
+<div className="w-full h-[10%] bg-[red]">
+$210.00  
 </div>
 
 </div>
-</div>
+            </div>
+        </div>
 </div>
   )
 }
