@@ -1,5 +1,5 @@
 import {BsChevronDoubleRight} from "react-icons/bs"
-import pix from "../assets/room.jpg"
+import pix from "../../../assets/room.jpg"
 const Description = () => {
   return (
     <div className=" flex justify-center flex-col items-center bg-[#FFFFFF] w-[100%]">

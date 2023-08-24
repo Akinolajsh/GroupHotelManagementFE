@@ -1,4 +1,4 @@
-import hotelViewPix from "../../assets/hotelView.jpg"
+import hotelViewPix from "../../../assets/hotelView.jpg"
 
 const HotelView = () => {
   return (
@@ -7,7 +7,7 @@ const HotelView = () => {
         backgroundImage: `url(${hotelViewPix})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundAttachment: "cover",
+        backgroundAttachment: "fixed",
       }}>
     </div>
   )

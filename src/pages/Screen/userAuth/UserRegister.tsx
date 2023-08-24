@@ -6,7 +6,7 @@ import {Link, useNavigate} from "react-router-dom"
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
-import { registerUser } from "../api/AuthApi"
+import { registerUser } from "../../../api/AuthApi"
 
 
 const UserRegister = () => {

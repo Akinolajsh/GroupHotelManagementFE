@@ -1,4 +1,4 @@
-import pix from ".././../assets/react.svg"
+import pix from "../.././../assets/react.svg"
 
 const Experience = () => {
 

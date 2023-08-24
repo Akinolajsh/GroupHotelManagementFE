@@ -1,4 +1,4 @@
-import chefPix from "../../assets/chef-removebg-preview.png";
+import chefPix from "../../../assets/chef-removebg-preview.png";
 
 const Chef = () => {
   const data: any = [

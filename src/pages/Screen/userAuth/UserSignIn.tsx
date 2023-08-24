@@ -4,7 +4,7 @@ import {BsArrowLeft, BsArrowRight} from "react-icons/bs"
 import { yupResolver } from "@hookform/resolvers/yup"
 import {Link, useNavigate} from "react-router-dom"
 import *  as yup from "yup"
-import { signInUser } from "../api/AuthApi"
+import { signInUser } from "../../../api/AuthApi"
 
 
 
