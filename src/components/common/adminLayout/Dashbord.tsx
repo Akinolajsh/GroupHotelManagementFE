@@ -26,7 +26,7 @@ import {BiSolidReport} from "react-icons/bi"
 
 
 
-const AdminHome = () => {
+const Dashbord = () => {
   return (
     <div>
         {/* line */}
@@ -171,4 +171,4 @@ const AdminHome = () => {
   )
 }
 
-export default AdminHome
+export default Dashbord

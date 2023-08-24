@@ -1,14 +1,17 @@
-import roomImg from "../../assets/room.avif";
+import roomImg from "../../assets/room.avif"
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { createRoom } from "../../api/AdminRoomAPI";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const CreateRoom = () => {
 
   const navigate= useNavigate()
+
+  const adminID= useSelector((state:any)=> state.hotelApp)
 
   const model = yup.object({
     roomSize: yup.string().required(),
@@ -30,6 +33,7 @@ const CreateRoom = () => {
   const onCreate = handleSubmit(async (data: any) => {
     const { roomSize, bedSize, Guest, roomType, description, amount } = data;
 
+    console.log("check",data)
     const formData = new FormData();
 
     formData.append("roomSize", roomSize);
@@ -40,7 +44,9 @@ const CreateRoom = () => {
     formData.append("amount", amount);
     formData.append("image ", image);
 
-   
+   createRoom(formData, adminID).then(()=>{
+    navigate("/")
+   })
   });
 
   const [image, setImage] = useState<string>("");
