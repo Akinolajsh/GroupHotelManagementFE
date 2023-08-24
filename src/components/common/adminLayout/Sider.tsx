@@ -3,7 +3,7 @@ import {BsDatabaseDash} from "react-icons/bs"
 const Sider = () => {
   return (
 
-    <div className="fixed bg-[#024637]">
+    <div className="fixed ">
         {/* search */}
         <div className=" w-[200px] h-[30px] border mt-[20px] flex  justify-center items-center ml-[20px] ">
             <input className="italic text-[12px] text-[white] w-[150px] h-[30px] outline-none bg-transparent "
