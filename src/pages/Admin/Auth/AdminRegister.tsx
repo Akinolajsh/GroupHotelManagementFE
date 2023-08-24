@@ -26,7 +26,7 @@ const AdminReg = () => {
     companyEmail : yup.string().required(),
     companyAddress : yup.string().required(),
     companyPhoneNo : yup.string().required(),
-    passord : yup.string().required(),
+    passWord : yup.string().required(),
   })
 
   const {register,handleSubmit,formState:{errors}} = useForm({
@@ -34,17 +34,17 @@ const AdminReg = () => {
   })
 
   const onSubmit = handleSubmit((data:any)=>{
-    const {companyName,companyEmail,companyAddress,companyPhoneNo,password} = data
+    const {companyName,companyEmail,companyAddress,companyPhoneNo,passWord} = data
     const formData = new FormData()
     formData.append("companyName",companyName)
     formData.append("companyEmail",companyEmail)
     formData.append("companyAddress",companyAddress)
     formData.append("companyPhoneNo",companyPhoneNo)
-    formData.append("password",password)
+    formData.append("passWord",passWord)
     formData.append("image",image)
 
     registerAdmin(formData).then(()=>{
-      navigate("/admin-register")
+      navigate("/admin-sign-in")
     })
 
   })
@@ -170,7 +170,7 @@ const AdminReg = () => {
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">companyEmail</label>
           <input className="
           w-[280px]
           h-[35px]
@@ -185,11 +185,11 @@ const AdminReg = () => {
           bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
+          placeholder="e.g. hugheshotels@gmail.com"
+          {...register("companyEmail")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.companyEmail?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
@@ -206,7 +206,7 @@ const AdminReg = () => {
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">companyAddress</label>
           <input className="
           w-[280px]
           h-[35px]
@@ -221,11 +221,11 @@ const AdminReg = () => {
           bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
+          placeholder="e.g. 122 Block park."
+          {...register("companyAddress")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.companyAddress?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
@@ -242,7 +242,7 @@ const AdminReg = () => {
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">companyPhoneNo</label>
           <input className="
           w-[280px]
           h-[35px]
@@ -257,11 +257,11 @@ const AdminReg = () => {
           bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
+          placeholder="e.g. +234 9091472997"
+          {...register("companyPhoneNo")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.companyPhoneNo?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
@@ -278,7 +278,7 @@ const AdminReg = () => {
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">passWord</label>
           <input className="
           w-[280px]
           h-[35px]
@@ -293,11 +293,11 @@ const AdminReg = () => {
           bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
+          placeholder="e.g. companyPassWord$$%%"
+          {...register("passWord")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.passWord?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
@@ -332,7 +332,7 @@ const AdminReg = () => {
           font-[500]
           text-[#024637]
           ">Already have an account?</div>
-          <Link to="/admin-signin">
+          <Link to="/admin-sign-in">
           <div className="
                     text-[13px]
                     font-[500]

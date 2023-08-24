@@ -8,7 +8,7 @@ import CreateRoom from "../pages/Admin/CreateRoom";
 import ViewRooms from "../pages/Screen/LandingPage/ViewRooms";
 import Dashbord from "../pages/Admin/Dashbord";
 import AdminRegister from "../pages/Admin/Auth/AdminRegister";
-import AdminSignIn from "../pages/Admin/Auth/AminSignIn";
+import AdminSignIn from "../pages/Admin/Auth/AdminSignIn";
 
 export const mainRoute = createBrowserRouter([
   {

@@ -1,32 +1,18 @@
 import img from "../../../assets/4536104.jpg"
-import img2 from "../../../assets/dummy-prod-1.jpg"
 import * as yup from "yup"
 import {useForm} from "react-hook-form" 
 import {yupResolver} from "@hookform/resolvers/yup" 
 import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
-import { registerAdmin } from "../../../api/AdminApi"
+import { signInAdmin } from "../../../api/AdminApi"
+
+
 const AdminSignIn = () => {
 
   const navigate = useNavigate()
 
-  const [avatar,setAvatar] = useState<string>(img2)
-  const [image,setImage] = useState<string>("")
-
-  const onHandleImage = ((el:any)=>{
-    const  localImage = el.target.files[0]
-    const  saveImage = URL.createObjectURL(localImage)
-
-    setAvatar(saveImage)
-    setImage(localImage)
-  })
-
   const model = yup.object({
-    companyName : yup.string().required(),
     companyEmail : yup.string().required(),
-    companyAddress : yup.string().required(),
-    companyPhoneNo : yup.string().required(),
-    passord : yup.string().required(),
+    passWord : yup.string().required()
   })
 
   const {register,handleSubmit,formState:{errors}} = useForm({
@@ -34,17 +20,11 @@ const AdminSignIn = () => {
   })
 
   const onSubmit = handleSubmit((data:any)=>{
-    const {companyName,companyEmail,companyAddress,companyPhoneNo,password} = data
-    const formData = new FormData()
-    formData.append("companyName",companyName)
-    formData.append("companyEmail",companyEmail)
-    formData.append("companyAddress",companyAddress)
-    formData.append("companyPhoneNo",companyPhoneNo)
-    formData.append("password",password)
-    formData.append("image",image)
+    const {companyEmail,passWord} = data
+    
 
-    registerAdmin(formData).then(()=>{
-      navigate("/admin-register")
+    signInAdmin({companyEmail,passWord}).then(()=>{
+      navigate("/admin-dashboard")
     })
 
   })
@@ -80,66 +60,29 @@ const AdminSignIn = () => {
           text-[25px]
           text-[#1B2E35]
           font-[500]
-          ">Welcome to the community..!</div>
+          ">Welcome back..!</div>
         <div className="
         text-[20px]
         text-[#1B2E35]
         font-[500]
-        ">Register as an Admin</div>
+        "> Admin login</div>
+     
+      
         <div className="
         flex
         flex-col
         mt-[7px]
         mb-[7px]
         ">
-
-<div className="
-          flex
-          flex-col
-          justify-center
-          items-center
-          mb-[15px]
-          ">
-            <img className="
-            w-[100px]
-            h-[100px]
-            rounded-[50%]
-            border-[1px]
-            border-[#1B2E35]
-            object-cover 
-            "
-            src={avatar}
-            />
-            <label className="
-            py-[3px]
-            px-[8px]
-            mt-[5px]
-            rounded-[5px]
-            text-[white]
-            bg-[#024637]
-            "
-            htmlFor="image"
-            >Upload Image</label>
-            <input className="
-            hidden
-            "
-            type="file"
-            onChange={onHandleImage}
-            id="image"
-            accept="image/png, image/jpg, image/jpeg"
-            />
-          </div>
-
           <label className="
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">companyEmail</label>
           <input className="
           w-[280px]
           h-[35px]
           border-[1px]
-          bg-[#D6DBD5]
           border-[#1B2E35]
           rounded-[5px]
           outline-[#1B2E35]
@@ -147,13 +90,14 @@ const AdminSignIn = () => {
           pl-[10px]
           placeholder:text-[13px]
           placeholder:text-[#1B2E35]
+          bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="e.g. Hughes Hotels"
-          {...register("companyName")}
+          placeholder="e.g. hugheshotel@gmail.com"
+          {...register("companyEmail")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.companyEmail?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
@@ -170,7 +114,7 @@ const AdminSignIn = () => {
           text-[13px]
           font-[500]
           text-[#1B2E35]
-          ">companyName</label>
+          ">passWord</label>
           <input className="
           w-[280px]
           h-[35px]
@@ -185,125 +129,18 @@ const AdminSignIn = () => {
           bg-[#D6DBD5]
           text-[13px]
           "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
+          placeholder="myPassWord$$%%"
+          {...register("passWord")}
           />
          {
-          errors.companyName?.message &&  <label className="
+          errors.passWord?.message &&  <label className="
           text-[11px]
           text-[red]
           font-[500]
           ">please fill this field</label>
          }
         </div>
-        <div className="
-        flex
-        flex-col
-        mt-[7px]
-        mb-[7px]
-        ">
-          <label className="
-          text-[13px]
-          font-[500]
-          text-[#1B2E35]
-          ">companyName</label>
-          <input className="
-          w-[280px]
-          h-[35px]
-          border-[1px]
-          border-[#1B2E35]
-          rounded-[5px]
-          outline-[#1B2E35]
-          outline-[1px]
-          pl-[10px]
-          placeholder:text-[13px]
-          placeholder:text-[#1B2E35]
-          bg-[#D6DBD5]
-          text-[13px]
-          "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
-          />
-         {
-          errors.companyName?.message &&  <label className="
-          text-[11px]
-          text-[red]
-          font-[500]
-          ">please fill this field</label>
-         }
-        </div>
-        <div className="
-        flex
-        flex-col
-        mt-[7px]
-        mb-[7px]
-        ">
-          <label className="
-          text-[13px]
-          font-[500]
-          text-[#1B2E35]
-          ">companyName</label>
-          <input className="
-          w-[280px]
-          h-[35px]
-          border-[1px]
-          border-[#1B2E35]
-          rounded-[5px]
-          outline-[#1B2E35]
-          outline-[1px]
-          pl-[10px]
-          placeholder:text-[13px]
-          placeholder:text-[#1B2E35]
-          bg-[#D6DBD5]
-          text-[13px]
-          "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
-          />
-         {
-          errors.companyName?.message &&  <label className="
-          text-[11px]
-          text-[red]
-          font-[500]
-          ">please fill this field</label>
-         }
-        </div>
-        <div className="
-        flex
-        flex-col
-        mt-[7px]
-        mb-[7px]
-        ">
-          <label className="
-          text-[13px]
-          font-[500]
-          text-[#1B2E35]
-          ">companyName</label>
-          <input className="
-          w-[280px]
-          h-[35px]
-          border-[1px]
-          border-[#1B2E35]
-          rounded-[5px]
-          outline-[#1B2E35]
-          outline-[1px]
-          pl-[10px]
-          placeholder:text-[13px]
-          placeholder:text-[#1B2E35]
-          bg-[#D6DBD5]
-          text-[13px]
-          "
-          placeholder="Hughes Hotels"
-          {...register("companyName")}
-          />
-         {
-          errors.companyName?.message &&  <label className="
-          text-[11px]
-          text-[red]
-          font-[500]
-          ">please fill this field</label>
-         }
-        </div>
+       
         <button className="
          w-[280px]
          h-[35px]
