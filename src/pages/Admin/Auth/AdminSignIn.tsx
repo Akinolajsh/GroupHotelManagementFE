@@ -24,7 +24,7 @@ const AdminSignIn = () => {
     
 
     signInAdmin({companyEmail,passWord}).then(()=>{
-      navigate("/admin-dashboard")
+      navigate("/admin")
     })
 
   })

@@ -16,11 +16,7 @@ import Dashbord from "../components/common/adminLayout/Dashbord";
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <PrivateRoute>
-        <Layout />
-      </PrivateRoute>
-    ),
+    element: <Layout />,
     children: [
       {
         index: true,
