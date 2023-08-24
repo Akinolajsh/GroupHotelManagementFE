@@ -13,6 +13,7 @@ import PrivateRoute from "./PrivateRoute";
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
+    
     element: <Layout />,
     children: [
       {
