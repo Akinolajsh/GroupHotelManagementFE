@@ -6,7 +6,7 @@ import {yupResolver} from "@hookform/resolvers/yup"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import { registerAdmin } from "../../../api/AdminApi"
-const AdminReg = () => {
+const AdminSignIn = () => {
 
   const navigate = useNavigate()
 
@@ -331,14 +331,14 @@ const AdminReg = () => {
           text-[13px]
           font-[500]
           text-[#024637]
-          ">Already have an account?</div>
-          <Link to="/admin-signin">
+          ">Don't have an account?</div>
+          <Link to="/admin-register">
           <div className="
                     text-[13px]
                     font-[500]
                     text-[#060a09]
                     ml-[5px]
-          ">Sign-in.</div>
+          ">Register.</div>
           </Link>
         </div>
         </form>
@@ -477,4 +477,4 @@ const AdminReg = () => {
   )
 }
 
-export default AdminReg
+export default AdminSignIn
