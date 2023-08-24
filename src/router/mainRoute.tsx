@@ -7,21 +7,24 @@ import Description from "../pages/Screen/LandingPage/Description";
 import CreateRoom from "../pages/Admin/CreateRoom";
 import ViewRooms from "../pages/Screen/LandingPage/ViewRooms";
 import AdminRegister from "../pages/Admin/Auth/AdminRegister";
-import AdminSignIn from "../pages/Admin/Auth/AminSignIn";
+import AdminSignIn from "../pages/Admin/Auth/AdminSignIn";
 import PrivateRoute from "./PrivateRoute";
+import ViewAllRooms from "../pages/Screen/LandingPage/ViewAllRooms";
+import AdminLayout from "../components/common/adminLayout/AdminLayout";
+import Dashbord from "../components/common/adminLayout/Dashbord";
 
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,
-        element: (
-          <PrivateRoute>
-            <HomeScreen />
-          </PrivateRoute>
-        ),
+        element: <HomeScreen />,
       },
     ],
   },
@@ -52,5 +55,22 @@ export const mainRoute = createBrowserRouter([
   {
     path: "/admin-sign-in",
     element: <AdminSignIn />,
+  },
+
+  {
+    path: "/all-rooms",
+    element: <ViewAllRooms />,
+  },
+  {
+    path: "/admin",
+    element: (
+        <AdminLayout />
+    ),
+    children: [
+      {
+        index: true,
+        element: <Dashbord />,
+      },
+    ],
   },
 ]);

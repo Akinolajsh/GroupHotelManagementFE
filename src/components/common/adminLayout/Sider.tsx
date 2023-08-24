@@ -4,7 +4,7 @@ import { BsFolder } from "react-icons/bs";
 import { HiOutlineCalendar } from "react-icons/hi";
 import { LiaFacebookMessenger } from "react-icons/lia";
 import { CgLogOut } from "react-icons/cg";
-import logox from "../assets/astra-logo-black-and-white.webp";
+import logox from "../../../assets/best.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   changeToggleFalse,
