@@ -11,7 +11,8 @@ import {
   changeToggleTrue,
   logOutUser,
 } from "../../../global/GlobalState";
-import pix from "../../../assets/b.jpg"
+import pix from "../../../assets/b.jpg";
+import { Link } from "react-router-dom";
 
 {
   /*
@@ -37,9 +38,9 @@ slack
 
 const Sider = () => {
   const dispatch = useDispatch();
-  const User = useSelector((state: any) => state.user);
+  const User = useSelector((state: any) => state.hotelApp);
   const toggle = useSelector((state: any) => state.toggle);
-  console.log(User)
+  console.log(User);
 
   return (
     <div>
@@ -194,7 +195,8 @@ const Sider = () => {
             )}
           </div>
 
-          <div
+         <Link to="/admin">
+         <div
             className="flex w-full
       h-[50px]
       hover:bg-[#726353] hover:cursor-pointer transition-all duration-300  pl-[20px] mt-[40px] items-center hover:rounded-md"
@@ -202,30 +204,38 @@ const Sider = () => {
             <LuLayoutDashboard className="text-[23px]" />
             <p className="ml-[15px]">Dashboard</p>
           </div>
-          <div
+         </Link>
+      <Link to="/admin/create">
+      <div
             className="flex w-full
       h-[50px]
       hover:bg-[#726353] hover:cursor-pointer transition-all duration-300  pl-[20px] mt-[5px] items-center hover:rounded-md"
           >
             <BsFolder className="text-[23px]" />
-            <p className="ml-[15px]">Projects</p>
+            <p className="ml-[15px]">Add Room </p>
           </div>
-          <div
+      </Link>
+
+        <Link to="/admin/view">
+        <div
             className="flex w-full
       h-[50px]
       hover:bg-[#726353] hover:cursor-pointer transition-all duration-300  pl-[20px] mt-[5px] items-center hover:rounded-md"
           >
             <HiOutlineCalendar className="text-[25px]" />
-            <p className="ml-[15px]">Calendar</p>
+            <p className="ml-[15px]">view Room</p>
           </div>
+        </Link>
+        <Link to="/admin/book">
           <div
             className="flex w-full
       h-[50px]
       hover:bg-[#726353] hover:cursor-pointer transition-all duration-300  pl-[20px] mt-[5px] items-center hover:rounded-md"
           >
             <LiaFacebookMessenger className="text-[25px]" />
-            <p className="ml-[15px]">Messages</p>
+            <p className="ml-[15px]">Booked Rooms</p>
           </div>
+        </Link>
           <hr className="mt-[200px]" />
           <div
             className="flex w-full
@@ -263,10 +273,6 @@ const Sider = () => {
 
 export default Sider;
 
-
-
-
-
 // import {AiOutlineSearch} from "react-icons/ai"
 // import {BsDatabaseDash} from "react-icons/bs"
 // const Sider = () => {
@@ -285,46 +291,45 @@ export default Sider;
 //         <div className="">
 //             <div className="text-[white] text-[15px] flex items-center gap-[10px] mt-[15px] ml-[20px] w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> Ui Elements</span> 
+//             <span> Ui Elements</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
 //             <div className="text-[white] ml-[20px] text-[15px] flex items-center gap-[10px] mt-[15px]  w-[200px] h-[30px] border-[1px] border-[white] " >
 //                 <BsDatabaseDash className="text-[white] text-[15px] "/>
-//             <span> DashBord</span> 
+//             <span> DashBord</span>
 //             </div>
-        
-         
+
 //         </div>
 //         {/*end Dashbord */}
 //         {/* buttonholder */}

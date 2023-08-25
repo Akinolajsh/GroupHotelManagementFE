@@ -4,9 +4,13 @@ import {useForm} from "react-hook-form"
 import {yupResolver} from "@hookform/resolvers/yup" 
 import { Link, useNavigate } from "react-router-dom"
 import { signInAdmin } from "../../../api/AdminApi"
+import { useDispatch } from "react-redux"
+import { createUser } from "../../../global/GlobalState"
 
 
 const AdminSignIn = () => {
+
+  const dispatch = useDispatch()
 
   const navigate = useNavigate()
 
@@ -23,7 +27,8 @@ const AdminSignIn = () => {
     const {companyEmail,passWord} = data
     
 
-    signInAdmin({companyEmail,passWord}).then(()=>{
+    signInAdmin({companyEmail,passWord}).then((res : any)=>{
+      dispatch(createUser(res))
       navigate("/admin")
     })
 

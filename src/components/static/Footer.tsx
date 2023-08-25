@@ -9,7 +9,7 @@ import { AiOutlineGithub,AiOutlineWhatsApp } from "react-icons/ai";
 
 const Footer = () => {
   return (
-    <div className="bg-[#222222] h-[450px] w-[w-full] flex justify-center items-center">
+    <div className="bg-[#222222]  w-[w-full] flex justify-center items-center py-[60px]">
       {/* MAIN */}
       <div className="w-[90%] h-[80%] flex justify-between ">
         {/* first */}

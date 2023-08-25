@@ -12,6 +12,18 @@ const CreateRoom = () => {
   const navigate= useNavigate()
 
   const adminID= useSelector((state:any)=> state.hotelApp)
+  console.log("first", adminID)
+
+  const [image, setImage] = useState<string>("");
+  const [avatar, setAvatar] = useState<string>(roomImg);
+
+  const onHandleImage = (e: any) => {
+    const localImage = e.target.files[0];
+    const saveImage = URL.createObjectURL(localImage);
+
+    setImage(localImage);
+    setAvatar(saveImage);
+  };
 
   const model = yup.object({
     roomSize: yup.string().required(),
@@ -30,46 +42,58 @@ const CreateRoom = () => {
     resolver: yupResolver(model),
   });
 
-  const onCreate = handleSubmit(async (data: any) => {
-    const { roomSize, bedSize, Guest, roomType, description, amount } = data;
+  // const onCreate = handleSubmit(async (data: any) => {
+  //   const { roomSize, bedSize, Guest, roomType, description, amount } = data;
 
-    console.log("check",data)
-    const formData = new FormData();
+  //   console.log("check",data)
+  //   const formData = new FormData();
 
-    formData.append("roomSize", roomSize);
-    formData.append("bedSize", bedSize);
-    formData.append("Guest", Guest);
-    formData.append("roomType", roomType);
-    formData.append("description", description);
-    formData.append("amount", amount);
-    formData.append("image ", image);
+  //   formData.append("roomSize", roomSize);
+  //   formData.append("bedSize", bedSize);
+  //   formData.append("Guest", Guest);
+  //   formData.append("roomType", roomType);
+  //   formData.append("description", description);
+  //   formData.append("amount", amount);
+  //   formData.append("image ", image);
 
-   createRoom(formData, adminID).then(()=>{
-    navigate("/")
-   })
-  });
+  //  createRoom(formData).then((res)=>{
+  //   console.log("ressss", res)
+  //   navigate("/")
+  //  })
+  // });
+  const onHandleSubmit = handleSubmit(async (data: any,) => {
+    const { roomSize, bedSize, Guest,roomType,description,amount } = data
 
-  const [image, setImage] = useState<string>("");
-  const [avatar, setAvatar] = useState<string>(roomImg);
+console.log(data)
 
-  const onHandleImage = (e: any) => {
-    const localImage = e.target.files[0];
-    const saveImage = URL.createObjectURL(localImage);
+    const formData = new FormData()
 
-    setImage(localImage);
-    setAvatar(saveImage);
-  };
+    formData.append("roomSize", roomSize)
+    formData.append("bedSize", bedSize)
+    formData.append("Guest", Guest)
+    formData.append("roomType", roomType)
+    formData.append("description", description)
+    formData.append("amount", amount)
+    formData.append("image", image)
+
+    createRoom(formData, adminID).then(() => {
+        navigate("/")
+    })
+
+})
+ 
 
   return (
     <div className="w-full h-[650px] bg-[#024637] flex justify-center items-center">
       {/* MAIN */}
       <form
+        onSubmit={onHandleSubmit}
         className="h-[630px] w-[500px] bg-white rounded justify-between flex flex-col"
         style={{
           boxShadow:
             " rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
         }}
-        onSubmit={onCreate}
+      
       >
         {/* UPLOAD SETUP */}
         <div className=" flex justify-center items-center flex-col">

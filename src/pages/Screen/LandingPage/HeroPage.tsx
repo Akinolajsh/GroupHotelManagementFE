@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import heroPix from "../../../assets/hero.avif";
 import logo from "../../../assets/images-removebg-preview.png";
 import ButtonProps from "../../../components/static/ButtonProps";
@@ -23,6 +24,7 @@ const HeroPage = () => {
           <div className="italic mb-[50px]">THE ESSENCE OF SHEER LUXURY</div>
 
           <div className="w-[320px] flex justify-between items-center text-[12px] b">
+            <Link to="/general">
             <ButtonProps
               text="OUR ROOMS"
               h="h-[40px] w
@@ -31,13 +33,17 @@ const HeroPage = () => {
               border="border-[1px] "
               col="text-[white]"
             />
-            <ButtonProps
+            </Link>
+           <Link to="/general">
+           <ButtonProps
               text="BOOK NOW"
               h="h-[40px] w
            w-[150px]"
               col="text-[black] "
               bg="bg-green-400"
             />
+           </Link>
+           
           </div>
         </div>
         {/* MAIN */}

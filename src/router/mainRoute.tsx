@@ -8,19 +8,30 @@ import CreateRoom from "../pages/Admin/CreateRoom";
 import ViewRooms from "../pages/Screen/LandingPage/ViewRooms";
 import AdminRegister from "../pages/Admin/Auth/AdminRegister";
 import AdminSignIn from "../pages/Admin/Auth/AdminSignIn";
-import PrivateRoute from "./PrivateRoute";
 import ViewAllRooms from "../pages/Screen/LandingPage/ViewAllRooms";
 import AdminLayout from "../components/common/adminLayout/AdminLayout";
 import Dashbord from "../components/common/adminLayout/Dashbord";
+import Registration from "../pages/Screen/LandingPage/Registration";
+import AdminViewRoom from "../pages/Screen/LandingPage/AdminViewRoom";
+import BookRooms from "../pages/Screen/LandingPage/BookRooms";
+import PrivateRoute from "./PrivateRoute";
 
 export const mainRoute = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: (
+      <PrivateRoute>
+        <Layout />
+      </PrivateRoute>
+    ),
     children: [
       {
         index: true,
         element: <HomeScreen />,
+      },
+      {
+        path: "/all-rooms",
+        element: <ViewAllRooms />,
       },
     ],
   },
@@ -36,10 +47,7 @@ export const mainRoute = createBrowserRouter([
     path: "/description",
     element: <Description />,
   },
-  {
-    path: "/admin-create",
-    element: <CreateRoom />,
-  },
+
   {
     path: "/view-rooms",
     element: <ViewRooms />,
@@ -54,19 +62,35 @@ export const mainRoute = createBrowserRouter([
   },
 
   {
-    path: "/all-rooms",
-    element: <ViewAllRooms />,
-  },
-  {
     path: "/admin",
-    element: (
-        <AdminLayout />
-    ),
+    element: <PrivateRoute>
+ <AdminLayout />
+    </PrivateRoute>,
+    
     children: [
       {
         index: true,
         element: <Dashbord />,
       },
+      {
+        index: true,
+        path: "/admin/create",
+        element: <CreateRoom />,
+      },
+      {
+        index: true,
+        path: "/admin/view",
+        element: <AdminViewRoom />,
+      },
+      {
+        index: true,
+        path: "/admin/book",
+        element: <BookRooms />,
+      },
     ],
+  },
+  {
+    path: "/general",
+    element: <Registration />,
   },
 ]);

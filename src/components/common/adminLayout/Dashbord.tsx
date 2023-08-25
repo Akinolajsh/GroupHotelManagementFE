@@ -31,12 +31,9 @@ const Dashbord = () => {
     <div>
         {/* line */}
         {/*  */}
-        <div className="w-full h-[50px] bg-[#024637] flex items-center gap-[10px]">       
-            <Link to="/admin-dashboard">           <BiHome className="text-[white] text-[15px] hover:cursor-pointer" /></Link>
-          <Link to="/admin-dashboard"> <span className=" text-[white] text-[13px] mt-[4px] hover:underline hover:cursor-pointer font-light">DashBoard</span></Link>
-        </div>
+       
         {/* circle */}
-         <div className="flex justify-center gap-[10px]  mt-[30px] ">
+         <div className="flex justify-center gap-[10px]  mt-[20px] ">
             {/* ist */}
             <div className="w-[70px] border-[1px] border-[#024637] h-[70px] rounded-[50%] bg-[white] hover:cursor-pointer hover:border-[2px] hover:border-[#024637] hover:bg-white flex justify-center items-center hover:transition-all "> <BsPersonFill className="  text-[30px] text-[#024637] hover:text-[#024637] hover:transition-all" />
             </div> 
@@ -58,16 +55,16 @@ const Dashbord = () => {
         {/* cards */}
         <div className="flex justify-center flex-wrap gap-[25px] mt-[30px]  ">
             <div className=" w-[250px] h-[250px] border-[1px] border-[#024637] flex flex-col  ">
-             <div className="flex justify-between bg-[#6baa9c]  ">
-             <span className="text-[15px] font-semibold ml-[10px] mt-[10px] text-[white]">Total Users</span>
+             <div className="flex justify-between bg-white  ">
+             <span className="text-[15px] font-semibold ml-[10px] mt-[10px] text-[#024637]">Total Users</span>
                 <span className="flex gap-[10px] mt-[10px]">
-                    <TbSettingsX className="border-[1px] border-[white]  text-[25px] p-1 font-semibold text-[white] "/>
-                    <IoMdStats className="border-[1px] border-[white]  p-1 text-[25px] font-semibold text-[white]"/>
+                    <TbSettingsX className="border-[1px] border-[#024637]  text-[25px] p-1 font-semibold text-[#024637] "/>
+                    <IoMdStats className="border-[1px] border-[#024637]  p-1 text-[25px] font-semibold text-[#024637 ]"/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[white] ">
-                   <BsFillPersonPlusFill className="ml-[10px] text-[60px] font-semibold text-[#024637] "/>
-                <span className="mr-[10px] text-[35px] font-semibold text-[#024637]">265k</span>
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
+                   <BsFillPersonPlusFill className="ml-[10px] text-[60px] font-semibold text-[white] "/>
+                <span className="mr-[10px] text-[35px] font-semibold text-[white]">265k</span>
                 </div>
             </div>
 
@@ -79,7 +76,7 @@ const Dashbord = () => {
                     <IoMdStats className="border-[1px] border-[#024637]  p-1 text-[25px] font-semibold text-[#024637]"/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <RiBallPenFill className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">300k</span>
                 </div>
@@ -93,7 +90,7 @@ const Dashbord = () => {
                     <FaShareSquare className="border-[1px] border-[#024637]  p-1 text-[25px] font-semibold text-[#024637]"/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <ImEarth className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">90%</span>
                 </div>
@@ -106,7 +103,7 @@ const Dashbord = () => {
                     <TbSettingsX className="border-[1px] border-[#024637]  text-[25px] p-1 font-semibold text-[#024637] "/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <AiOutlineWifi className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">160k</span>
                 </div>
@@ -120,7 +117,7 @@ const Dashbord = () => {
                  
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <BsFillPersonPlusFill className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">$5m</span>
                 </div>
@@ -133,7 +130,7 @@ const Dashbord = () => {
                     <PiDownloadSimpleLight className="border-[1px] border-[#024637]  text-[25px] p-1 font-semibold text-[#024637] "/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <AiOutlineCloudDownload className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">360k</span>
                 </div>
@@ -146,7 +143,7 @@ const Dashbord = () => {
                     <IoMdStats className="border-[1px] border-[#024637]  p-1 text-[25px] font-semibold text-[#024637]"/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <TbReport className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">0.1%</span>
                 </div>
@@ -159,7 +156,7 @@ const Dashbord = () => {
                     <BiSolidReport className="border-[1px] border-[#024637]  text-[25px] p-1 font-semibold text-[#024637] "/>
                 </span>
              </div>
-                <div className="border h-full flex justify-between items-center bg-[#024637] ">
+                <div className="border h-full flex justify-between items-center bg-[#007F00] ">
                    <BsTicket className="ml-[10px] text-[70px] font-semibold text-[white] "/>
                 <span className="mr-[10px] text-[40px] font-semibold text-[white]">1.5k</span>
                 </div>

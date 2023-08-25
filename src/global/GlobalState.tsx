@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-hotelApp: "" || {} || null,
+hotelApp: "" || null,
 toggle: false
 }
 
