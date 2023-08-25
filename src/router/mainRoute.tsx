@@ -4,7 +4,7 @@ import UserRegister from "../pages/Screen/userAuth/UserRegister";
 import UserSignIn from "../pages/Screen/userAuth/UserSignIn";
 import HomeScreen from "../pages/Screen/LandingPage/HomeScreen";
 import Description from "../pages/Screen/LandingPage/Description";
-import CreateRoom from "../pages/Admin/CreateRoom";
+import CreateRoom from "../pages/Admin/Auth/CreateRoom";
 import ViewRooms from "../pages/Screen/LandingPage/ViewRooms";
 import AdminRegister from "../pages/Admin/Auth/AdminRegister";
 import AdminSignIn from "../pages/Admin/Auth/AdminSignIn";

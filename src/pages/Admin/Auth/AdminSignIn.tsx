@@ -158,7 +158,7 @@ const AdminSignIn = () => {
          hover:cursor-pointer
          hover:transition-all
          duration-300
-        ">Register</button>
+        ">Sign In</button>
         <hr className="
         w-[290px]
         border-[1px]
@@ -222,7 +222,7 @@ const AdminSignIn = () => {
             rounded-br-[50%]
           object-cover
             "/>
-            <div className="
+            {/* <div className="
             w-[100px]
             h-[100px]
             border-[1px]
@@ -232,7 +232,7 @@ const AdminSignIn = () => {
             left-20
             rounded-br-[0%]
             rounded-bl-[100%]
-            "></div>
+            "></div> */}
           </div>
           </div>
         
@@ -280,7 +280,7 @@ const AdminSignIn = () => {
             rounded-tr-[100%]
             "/>
           </div>
-          <div className="
+          {/* <div className="
             w-[60px]
             h-[60px]
             absolute
@@ -290,8 +290,8 @@ const AdminSignIn = () => {
             left-[380px]
             rounded-tl-[0%]
             rounded-tr-[100%]
-            "/>
-            <div className="
+            "/> */}
+            {/* <div className="
             w-[300px]
             h-[300px]
             rounded-[50%]
@@ -301,8 +301,8 @@ const AdminSignIn = () => {
             border-[#385A64]
             bottom-[100px]
             left-[130px]
-            "/>
-            <div className="
+            "/> */}
+            {/* <div className="
             w-[300px]
             h-[300px]
             border-[1px]
@@ -311,7 +311,7 @@ const AdminSignIn = () => {
             border-[#385A64]
             bottom-[420px]
             right-[100px]
-            "/>
+            "/> */}
         </div>
         {/* Right ends */}
       </div>

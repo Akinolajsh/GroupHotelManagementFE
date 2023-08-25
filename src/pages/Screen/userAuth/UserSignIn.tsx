@@ -200,8 +200,8 @@ const UserSignIn = () => {
             h-[75px]
             bg-[white]
             absolute
-            top-[106.5px]
-            right-[350px]
+            top-[86.5px]
+            right-[400px]
             rounded-br-[20px]
             flex
             justify-center
@@ -244,8 +244,8 @@ const UserSignIn = () => {
             absolute
             border-[white]
             border-[1px]
-            bottom-[120px]
-            right-[480px]
+            bottom-[100px]
+            right-[530px]
             rounded-[20px]
             flex
             justify-center
@@ -260,8 +260,8 @@ const UserSignIn = () => {
               h-[90px]
               bg-white
               absolute
-              bottom-[100px]
-              right-[130px]
+              bottom-[90px]
+              right-[150px]
               rounded-tl-[20px]
               flex
               justify-center

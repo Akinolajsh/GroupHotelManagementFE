@@ -2,12 +2,15 @@ import ButtonProps from "./ButtonProps";
 import logoPix from "../../assets/images-removebg-preview.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logOutUser } from "../../global/GlobalState";
 
 const Header = () => {
 
 const dispatch= useDispatch();
+
+const user= useSelector((state:any)=>state.hotelApp)
+
 
   const [show, setShow] = useState<boolean>(false);
 
@@ -72,28 +75,32 @@ const dispatch= useDispatch();
             {/* NAV */}
 
             {/* BUTTON */}
-            <Link to="/general">
+           
+          <div>
+            {
+              user ? (  <div
+                onClick={()=>{
+                  dispatch(logOutUser())
+                }}
+                >
+                  <ButtonProps
+                    h="h-[40px]"
+                    w="w-[120px]"
+                    text="Logout"
+                    bg="bg-green-400"
+                    
+    
+                  />
+                </div>):( <Link to="/general">
               <ButtonProps
                 h="h-[40px]"
                 w="w-[120px]"
                 text="BOOK NOW"
                 bg="bg-green-400"
               />
-            </Link>
-            <div
-            onClick={()=>{
-              dispatch(logOutUser())
-            }}
-            >
-              <ButtonProps
-                h="h-[40px]"
-                w="w-[120px]"
-                text="Logout"
-                bg="bg-green-400"
-                
-
-              />
-            </div>
+            </Link>)
+            }
+          </div>
             {/* BUTTON */}
           </div>
         </div>

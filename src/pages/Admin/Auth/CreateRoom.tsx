@@ -1,10 +1,10 @@
-import roomImg from "../../assets/room.avif"
+import roomImg from "../../../assets/room.avif"
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { createRoom } from "../../api/AdminRoomAPI";
-import { useNavigate } from "react-router-dom";
+import { createRoom } from "../../../api/AdminRoomAPI";
+import {  useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const CreateRoom = () => {

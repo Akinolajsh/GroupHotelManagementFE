@@ -438,7 +438,7 @@ const AdminReg = () => {
             rounded-tr-[100%]
             "/>
           </div>
-          <div className="
+          {/* <div className="
             w-[60px]
             h-[60px]
             absolute
@@ -448,8 +448,8 @@ const AdminReg = () => {
             left-[380px]
             rounded-tl-[0%]
             rounded-tr-[100%]
-            "/>
-            <div className="
+            "/> */}
+            {/* <div className="
             w-[300px]
             h-[300px]
             rounded-[50%]
@@ -459,8 +459,8 @@ const AdminReg = () => {
             border-[#385A64]
             bottom-[100px]
             left-[130px]
-            "/>
-            <div className="
+            "/> */}
+            {/* <div className="
             w-[300px]
             h-[300px]
             border-[1px]
@@ -469,7 +469,7 @@ const AdminReg = () => {
             border-[#385A64]
             bottom-[420px]
             right-[100px]
-            "/>
+            "/> */}
         </div>
         {/* Right ends */}
       </div>
