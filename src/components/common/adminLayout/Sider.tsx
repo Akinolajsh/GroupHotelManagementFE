@@ -13,6 +13,7 @@ import {
 } from "../../../global/GlobalState";
 import pix from "../../../assets/b.jpg";
 import { Link } from "react-router-dom";
+import { useTanAdminOne } from "../../../hooks/CustomHooks";
 
 {
   /*
@@ -38,14 +39,15 @@ slack
 
 const Sider = () => {
   const dispatch = useDispatch();
-  const User = useSelector((state: any) => state.hotelApp);
+  const adminID = useSelector((state: any) => state.hotelApp);
   const toggle = useSelector((state: any) => state.toggle);
-  console.log(User);
+  console.log(adminID);
+    const { admin } = useTanAdminOne(adminID)
 
   return (
     <div>
       {toggle ? (
-        <div className="h-[100vh] w-[65px] fixed bg-[#cfa476] text-white pt-[10px]">
+        <div className="h-[100vh] w-[65px] fixed bg-[#024637] text-white pt-[10px]">
           <div
             className="
               flex
@@ -74,7 +76,7 @@ const Sider = () => {
                   bg-[white] 
                   "
             >
-              <img src={logox} alt="" className="w-[35px] " />
+              <img src={admin?.companyPics} alt="" className="w-[35px] " />
             </div>
             {toggle ? (
               <HiChevronDoubleRight
@@ -141,14 +143,14 @@ const Sider = () => {
           <div className="flex ml-[20px] items-center mt-[10px]">
             <img
               className="h-[25px] w-[25px] object-cover border-[1.5px] rounded-[50%] "
-              src={pix}
+              src={admin?.companyPics}
             />
 
             <div className="flex flex-col ml-[10px] justify-center"></div>
           </div>
         </div>
       ) : (
-        <div className="h-[100vh] w-[200px] fixed bg-[#cfa476] text-white pt-[10px]">
+        <div className="h-[100vh] w-[200px] fixed bg-[#024637] text-white pt-[10px]">
           <div
             className="
       flex
@@ -175,9 +177,9 @@ const Sider = () => {
           bg-[white] 
           ml-[10px]"
             >
-              <img src={logox} alt="" className="w-[35px] " />
+              <img src={admin?.companyPics} alt="" className="w-[35px] " />
             </div>
-            <div className="text-[20px]">Astra</div>
+            <div className="text-[13px]">{admin?.companyName}</div>
             {toggle ? (
               <HiChevronDoubleLeft
                 className="text-[23px]"
@@ -257,12 +259,12 @@ const Sider = () => {
           <div className="flex items-center mt-[10px]">
             <img
               className="h-[40px] w-[40px] object-cover border-[1.5px] rounded-[50%] ml-[10px] "
-              src={pix}
+              src={admin?.companyPics}
             />
 
             <div className="flex flex-col ml-[10px] justify-center">
-              <div className="text-[14px]">Jecinta</div>
-              <div className="text-[12px]">gwjgd/;bsnb/dnhkm/</div>
+              <div className="text-[14px]">{admin?.companyName}</div>
+              <div className="text-[10px]">{admin?.companyEmail}</div>
             </div>
           </div>
         </div>

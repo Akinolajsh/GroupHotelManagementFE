@@ -12,10 +12,10 @@ const CreateRoom = () => {
   const navigate= useNavigate()
 
   const adminID= useSelector((state:any)=> state.hotelApp)
-  console.log("first", adminID)
+  // console.log("first", adminID)
 
-  const [image, setImage] = useState<string>("");
   const [avatar, setAvatar] = useState<string>(roomImg);
+  const [image, setImage] = useState<string>("");
 
   const onHandleImage = (e: any) => {
     const localImage = e.target.files[0];
@@ -61,7 +61,7 @@ const CreateRoom = () => {
   //   navigate("/")
   //  })
   // });
-  const onHandleSubmit = handleSubmit(async (data: any,) => {
+  const onHandleSubmit = handleSubmit( (data: any,) => {
     const { roomSize, bedSize, Guest,roomType,description,amount } = data
 
 console.log(data)
@@ -76,8 +76,9 @@ console.log(data)
     formData.append("amount", amount)
     formData.append("image", image)
 
-    createRoom(formData, adminID).then(() => {
-        navigate("/")
+    createRoom(formData, adminID).then((res) => {
+      console.log("jshdj",adminID)
+      navigate("/")
     })
 
 })
@@ -214,3 +215,45 @@ console.log(data)
 };
 
 export default CreateRoom;
+
+
+
+// const CreateRoom = () => {
+//   return (
+//     <div className="
+//     w-full
+//     h-[100vh]
+//     flex
+//     justify-center
+//     items-center
+//     ">
+//       <div className="
+//       w-[50%]
+//       h-[90%]
+//       bg-[blue]
+//       flex
+//       flex-col
+//       justify-center
+//       items-center
+//       ">
+//         <div className="
+//         flex
+//         flex-col
+//         justify-center
+//         items-center
+//         ">
+//           <img className="
+//           w-[150px]
+//           h-[150px]
+//           border-[1px]
+//           border-[black]
+//           "/>
+//           <label></label>
+//           <input/>
+//         </div>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default CreateRoom

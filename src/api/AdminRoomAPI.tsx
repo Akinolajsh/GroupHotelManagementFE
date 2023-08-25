@@ -10,7 +10,7 @@ export const createRoom = async (data: any, adminID:string) => {
 
       return await axios.post(`${url}/${adminID}/createRoom`, data, config).then((res: any) => {
 
-        console.log(res)
+        console.log("res",res)
           return res.data.data
       })
 

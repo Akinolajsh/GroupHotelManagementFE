@@ -36,7 +36,7 @@ export const ViewAdmins = async()=>{
     }
 }
 
-export const viewOneAdmin = (adminID: any)=>{
+export const viewOneAdmin = (adminID: string)=>{
     try {
       return axios.get(`${url}/${adminID}/viewOneAdmin`).then((res:any)=>{
         return res.data.data
