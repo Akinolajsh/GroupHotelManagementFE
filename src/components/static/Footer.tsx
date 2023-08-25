@@ -78,7 +78,7 @@ const Footer = () => {
         {/* second */}
 
         {/* third */}
-        <div className="flex flex-col mr-[100px] ">
+        <div className="flex flex-col mr-[100px] meduim:hidden">
           <div className=" mb-5 uppercase text-[13px] text-[#646464] hover:cursor-pointer ">
             USEFUL LINKS
           </div>

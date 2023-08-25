@@ -137,7 +137,7 @@ const AdminReg = () => {
           ">companyName</label>
           <input className="
           w-[280px]
-          h-[35px]
+          h-[30px]
           border-[1px]
           bg-[#D6DBD5]
           border-[#1B2E35]
@@ -173,7 +173,7 @@ const AdminReg = () => {
           ">companyEmail</label>
           <input className="
           w-[280px]
-          h-[35px]
+          h-[30px]
           border-[1px]
           border-[#1B2E35]
           rounded-[5px]
@@ -209,7 +209,7 @@ const AdminReg = () => {
           ">companyAddress</label>
           <input className="
           w-[280px]
-          h-[35px]
+          h-[30px]
           border-[1px]
           border-[#1B2E35]
           rounded-[5px]
@@ -245,7 +245,7 @@ const AdminReg = () => {
           ">companyPhoneNo</label>
           <input className="
           w-[280px]
-          h-[35px]
+          h-[30px]
           border-[1px]
           border-[#1B2E35]
           rounded-[5px]
@@ -281,7 +281,7 @@ const AdminReg = () => {
           ">passWord</label>
           <input className="
           w-[280px]
-          h-[35px]
+          h-[30px]
           border-[1px]
           border-[#1B2E35]
           rounded-[5px]
@@ -306,7 +306,7 @@ const AdminReg = () => {
         </div>
         <button className="
          w-[280px]
-         h-[35px]
+         h-[30px]
          bg-[#024637]
          rounded-[5px]
          text-white

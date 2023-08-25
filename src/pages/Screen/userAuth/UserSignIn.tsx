@@ -226,7 +226,7 @@ const UserSignIn = () => {
             h-[30px]
             bg-[white]
             absolute
-            top-[180px]
+            top-[160px]
             right-[520px]
             rounded-br-[20px]
             "></div>

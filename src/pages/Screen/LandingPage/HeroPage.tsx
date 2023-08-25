@@ -24,9 +24,9 @@ const HeroPage = () => {
           <div className="italic mb-[50px]">THE ESSENCE OF SHEER LUXURY</div>
 
           <div className="w-[320px] flex justify-between items-center text-[12px] b">
-            <Link to="/general">
+            <Link to="/all-rooms">
             <ButtonProps
-              text="OUR ROOMS"
+              text="View ROOMS"
               h="h-[40px] w
            w-[150px] "
               bg="bg-[transparent]"

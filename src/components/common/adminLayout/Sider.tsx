@@ -47,7 +47,7 @@ const Sider = () => {
   return (
     <div>
       {toggle ? (
-        <div className="h-[100vh] w-[65px] fixed bg-[#007F00] text-white pt-[10px]">
+        <div className="h-[100vh] w-[65px] fixed bg-[#024637dc] text-white pt-[10px]">
           <div
             className="
               flex
@@ -150,7 +150,7 @@ const Sider = () => {
           </div>
         </div>
       ) : (
-        <div className="h-[100vh] w-[200px] fixed bg-[#007F00] text-white pt-[10px]">
+        <div className="h-[100vh] w-[200px] fixed bg-[#024637dc] text-white pt-[10px]">
           <div
             className="
       flex

@@ -9,7 +9,7 @@ const PrivateRoute:React.FC<PropsWithChildren> = ({children}) => {
   return (
     <div>
         {
-            user ? <div>{children}</div> : <Navigate to="/general"/>
+            user ? <div>{children}</div> : <Navigate to="/"/>
         }
     </div>
   )

@@ -20,9 +20,9 @@ export const mainRoute = createBrowserRouter([
   {
     path: "/",
     element: (
-      <PrivateRoute>
+      // <PrivateRoute>
         <Layout />
-      </PrivateRoute>
+      // </PrivateRoute>
     ),
     children: [
       {

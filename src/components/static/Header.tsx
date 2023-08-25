@@ -28,7 +28,7 @@ const user= useSelector((state:any)=>state.hotelApp)
     <div>
       {show ? (
         <div className="h-[70px] w-full flex justify-center items-center bg-[#024637]  text-white fixed z-20">
-          <div className="h-[70px] w-[90%] flex justify-between items-center ">
+          <div className="h-[70px] w-[90%] flex justify-between items-center duration-600 transition-all">
             {/* LOGO */}
             <div className="font-bold text-[16px] flex justify-center items-center">
               <img src={logoPix} className="h-[67px]" /> MOON SAFARI
@@ -45,19 +45,36 @@ const user= useSelector((state:any)=>state.hotelApp)
             {/* NAV */}
 
             {/* BUTTON */}
-            <Link to="/general" className="medium-hidden">
+            <div>
+            {
+              user ? (  <div
+                onClick={()=>{
+                  dispatch(logOutUser())
+                }}
+                >
+                  <ButtonProps
+                    h="h-[40px]"
+                    w="w-[120px]"
+                    text="Logout"
+                    bg="bg-green-400"
+                    
+    
+                  />
+                </div>):( <Link to="/general">
               <ButtonProps
                 h="h-[40px]"
                 w="w-[120px]"
                 text="BOOK NOW"
                 bg="bg-green-400"
               />
-            </Link>
+            </Link>)
+            }
+          </div>
             {/* BUTTON */}
           </div>
         </div>
       ) : (
-        <div className="h-[70px] w-full flex justify-center items-center bg-white ">
+        <div className="h-[70px] w-full flex justify-center items-center bg-white duration-600 transition-all">
           <div className="h-[70px] w-[90%] flex justify-between items-center ">
             {/* LOGO */}
             <div className="font-bold text-[16px] flex justify-center items-center">

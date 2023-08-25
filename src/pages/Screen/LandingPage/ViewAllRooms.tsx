@@ -2,6 +2,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ButtonProps from "../../../components/static/ButtonProps";
 // import { useSelector } from "react-redux";
 import { useTanRoom } from "../../../hooks/CustomHooks";
+import { Link } from "react-router-dom";
 
 const ViewAllRooms = () => {
 
@@ -36,7 +37,9 @@ const ViewAllRooms = () => {
         <div>₦</div>
         <div>{props?.amount}</div>
     </div>
+<Link to="/description">
 <ButtonProps h="h-[30px]" w="w-[120px]" bg="bg-[#024637]" text="View more" col="text-[white] text-[15px]"/>
+</Link>
     {/* <button className="bg-slate-400 w-[120px] h-[30px]  rounded mt-3">
         View more
     </button> */}

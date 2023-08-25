@@ -14,7 +14,7 @@ interface iButton{
 
 const ButtonProps:React.FC <iButton> = ({text, h, w, bg, border, col, medium,small}) => {
   return (
-    <div className={`${h} ${w} ${border} ${bg} ${col} ${medium} ${small} flex justify-center items-center  text-[12px] font-bold rounded hover:scale-[1.02] hover:cursor-pointer duration-300 transition-all`}>
+    <div className={`${h} ${w} ${border} ${bg} ${col} ${medium} ${small} flex justify-center items-center  text-[15px] font-bold rounded hover:scale-[1.02] hover:cursor-pointer duration-300 transition-all`}>
         {text}
     </div>
   )
